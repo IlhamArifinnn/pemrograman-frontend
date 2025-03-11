@@ -22,20 +22,24 @@ import users from "../models/users";
 
 // sebelum menggunakan asynchoronous
 // const formatUser = (title) => {
-//   const format = users.map((user) => ({
-//     ...user,
-//     name: `${title} ${user.name}`,
-//   }));
+//   const format = users.map((user) => {
+//     return {
+//       ...user,
+//       name: `${title} ${user.name}`,
+//     };
+//   });
 //   return format;
 // };
 
 const formatUser = (title) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      const format = users.map((user) => ({
-        ...user,
-        name: `${title} ${user.name}`,
-      }));
+      const format = users.map((user) => {
+        return {
+          ...user,
+          name: `${title} ${user.name}`,
+        };
+      });
       resolve(format);
     }, 3000);
   });
