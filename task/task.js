@@ -60,6 +60,12 @@ const store = (user) => {
   } else {
     users.push(user);
   }
+
+  // const validation = !user
+  //   ? console.log("user is empty or null")
+  //   : users.push(user);
+
+  // return validation;
 };
 /**
  * TODO 4.
@@ -74,6 +80,13 @@ const update = (index, user) => {
     // users.splice(index, 1, user);
     users[index] = user;
   }
+
+  // const validation =
+  //   !user || index > users.length
+  //     ? console.log("user is empty or index is longer than array length")
+  //     : (users[index] = user);
+
+  // return validation;
 };
 
 /**
@@ -88,6 +101,13 @@ const destroy = (index) => {
   } else {
     users.splice(index, 1);
   }
+
+  // const validation =
+  //   index > users.length
+  //     ? console.log("index is longer than array length")
+  //     : users.splice(index, 1);
+
+  // return validation;
 };
 
 /**
