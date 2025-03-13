@@ -39,8 +39,12 @@ const users = [
  * Note: Ubah function menggunakan arrow function.
  */
 const all = () => {
-  for (const user of users) {
-    console.log(user);
+  if (users.length === 0) {
+    console.log("users is empty");
+  } else {
+    for (const user of users) {
+      console.log(user);
+    }
   }
 };
 
@@ -51,9 +55,11 @@ const all = () => {
  * Note: Ubah function menggunakan arrow function.
  */
 const store = (user) => {
-  // console.log(user);
-  users.push(user);
-  all();
+  if (!user) {
+    console.log("user is empty or null");
+  } else {
+    users.push(user);
+  }
 };
 /**
  * TODO 4.
@@ -62,10 +68,12 @@ const store = (user) => {
  * Note: Ubah function menggunakan arrow function.
  */
 const update = (index, user) => {
-  // console.log(user);
-  // users.splice(index, 1, user);
-  users[index] = user;
-  all();
+  if (!user || index > users.length) {
+    console.log("user is empty or index is longer than array length");
+  } else {
+    // users.splice(index, 1, user);
+    users[index] = user;
+  }
 };
 
 /**
@@ -75,8 +83,11 @@ const update = (index, user) => {
  * Note: Ubah function menggunakan arrow function.
  */
 const destroy = (index) => {
-  users.splice(index, 1);
-  all();
+  if (index > users.length) {
+    console.log("index is longer than array length");
+  } else {
+    users.splice(index, 1);
+  }
 };
 
 /**
@@ -103,6 +114,7 @@ const main = () => {
     major: "Informatics",
   };
   store(newUser);
+  all();
 
   /**
    * Test function update
@@ -117,6 +129,7 @@ const main = () => {
     major: "English",
   };
   update(editedIndex, editedUser);
+  all();
 
   /**
    * Test function destroy
@@ -125,6 +138,7 @@ const main = () => {
   console.log("# Delete User: Nurul");
   const deletedIndex = 2;
   destroy(deletedIndex);
+  all();
 };
 
 main();
