@@ -1,6 +1,6 @@
 import React from "react";
 
-function CardProfile(prop) {
+const CardProfile = (prop) => {
   const { nama, jurusan } = prop;
   return (
     <div>
@@ -9,6 +9,6 @@ function CardProfile(prop) {
       <hr />
     </div>
   );
-}
+};
 
 export default CardProfile;

@@ -3,7 +3,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import CardProfile from "./CardProfile";
 
-function Main() {
+const Main = () => {
   return (
     <div style={{ width: "50%", margin: "auto" }}>
       <Header />
@@ -13,6 +13,6 @@ function Main() {
       <Footer />
     </div>
   );
-}
+};
 
 export default Main;
