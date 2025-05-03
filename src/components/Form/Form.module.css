@@ -32,37 +32,37 @@
   flex-direction: column;
 }
 
-.form__input__title {
+.form__input__title,
+.form__input__year,
+.form__input__type,
+.form__input__poster {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   gap: 0.3rem;
 }
-.form__input__title label {
+.form__input__title label,
+.form__input__year label,
+.form__input__type label,
+.form__input__poster label {
   font-size: 1.2rem;
   text-align: left;
   color: #64748b;
 }
 
-.form__input__title input {
-  padding: 0.5rem;
+.form__input__title input,
+.form__input__year input,
+.form__input__type select,
+.form__input__poster input {
+  padding: 0.6rem;
   border-radius: 0.5rem;
-}
-.form__input__year {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  gap: 0.3rem;
-}
-.form__input__year label {
-  font-size: 1.2rem;
-  text-align: left;
-  color: #64748b;
 }
 
-.form__input__year input {
-  padding: 0.5rem;
-  border-radius: 0.5rem;
+.form__error {
+  color: red;
+  margin: 0;
+  font-size: 0.9rem;
+  font-style: italic;
 }
 
 .form__button {
@@ -132,7 +132,8 @@
   }
 
   .form__input__title,
-  .form__input__year {
+  .form__input__year,
+  .form__input__type {
     display: flex;
     flex-direction: column;
     gap: 0.3rem;
