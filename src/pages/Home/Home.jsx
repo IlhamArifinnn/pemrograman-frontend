@@ -1,12 +1,23 @@
 import React from "react";
+import Navbar from "../../components/Navbar/Navbar";
+import Hero from "../../components/Hero/Hero";
+import IndonesiaStats from "../../components/IndonesiaStats/IndonesiaStats";
+import ProvinceStats from "../../components/ProvinceStats/ProvinceStats";
+import CovidForm from "../../components/CovidForm/CovidForm";
+import Footer from "../../components/Footer/Footer";
 
 function Home() {
   return (
-    <div>
-      <h1 className="text-3xl font-bold underline text-red-500 text-center">
-        Hello dunia!
-      </h1>
-    </div>
+    <>
+      <Navbar />
+      <main>
+        <Hero />
+        <IndonesiaStats />
+        <ProvinceStats />
+        <CovidForm />
+      </main>
+      <Footer />
+    </>
   );
 }
 
