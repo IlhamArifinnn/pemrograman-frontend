@@ -144,7 +144,8 @@
     color: #333;
   }
 
-  input {
+  input,
+  select {
     padding: 0.6rem;
     border-radius: 6px;
     border: 1.5px solid #10caa7;

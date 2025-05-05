@@ -49,10 +49,10 @@ function Form({ movies, setMovies }) {
 
     const movie = {
       id: nanoid(10),
-      title,
+      title: title,
       year: date,
-      type,
-      poster,
+      type: type,
+      poster: poster,
     };
 
     setMovies([...movies, movie]);
