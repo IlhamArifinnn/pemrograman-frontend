@@ -35,22 +35,22 @@ function Navbar() {
         } sm:flex flex-col sm:flex-row gap-4 sm:gap-6 items-center`}
       >
         <li>
-          <a href="#" className="hover:underline">
+          <a href="#!" className="hover:underline">
             Global
           </a>
         </li>
         <li>
-          <a href="#" className="hover:underline">
+          <a href="#!" className="hover:underline">
             Indonesia
           </a>
         </li>
         <li>
-          <a href="#" className="hover:underline">
+          <a href="#!" className="hover:underline">
             Provinsi
           </a>
         </li>
         <li>
-          <a href="#" className="hover:underline">
+          <a href="#!" className="hover:underline">
             Tentang Kami
           </a>
         </li>

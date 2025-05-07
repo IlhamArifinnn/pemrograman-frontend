@@ -13,22 +13,22 @@ function Footer() {
 
       <ul className="flex gap-5 md:gap-10">
         <li>
-          <a href="#" className="hover:underline">
+          <a href="#!" className="hover:underline">
             Global
           </a>
         </li>
         <li>
-          <a href="#" className="hover:underline">
+          <a href="#!" className="hover:underline">
             Indonesia
           </a>
         </li>
         <li>
-          <a href="#" className="hover:underline">
+          <a href="#!" className="hover:underline">
             Provinsi
           </a>
         </li>
         <li>
-          <a href="#" className="hover:underline">
+          <a href="#!" className="hover:underline">
             Tentang Kami
           </a>
         </li>
