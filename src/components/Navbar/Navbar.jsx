@@ -1,7 +1,7 @@
 function Navbar() {
   return (
     <nav
-      className="bg-blue-400 text-white p-4 flex flex-col sm:flex-row items-center justify-between md:justify-around"
+      className="bg-blue-400 text-white p-4 flex flex-col sm:flex-row items-center justify-between md:justify-around fixed top-0 right-0 left-0"
       aria-label="Main Navigation"
     >
       <div className="flex items-center gap-2 mb-2 sm:mb-0">
