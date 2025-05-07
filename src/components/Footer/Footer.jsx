@@ -5,7 +5,7 @@ function Footer() {
         <h1>Covid ID</h1>
         <h2>
           Developed by{" "}
-          <a href="#" hover:underline>
+          <a href="#" className="hover:underline">
             IlhamArifinnn
           </a>
         </h2>

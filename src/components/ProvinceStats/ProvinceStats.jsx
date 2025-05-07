@@ -9,7 +9,7 @@ function ProvinceStats() {
       </h2>
 
       <div className="flex items-center justify-center overflow-x-auto">
-        <table class="table-auto border border-gray-300 text-sm">
+        <table className="table-auto border border-gray-300 text-sm">
           <thead className="bg-blue-200">
             <tr>
               <th className="border px-4 py-2">No</th>
@@ -23,7 +23,7 @@ function ProvinceStats() {
 
           <tbody>
             {data.provinces.map((item, index) => (
-              <tr key={item.kota} className="text-center">
+              <tr key={item.provinsi} className="text-center">
                 <td className="border px-4 py-2">{index + 1}</td>
                 <td className="border px-4 py-2">{item.provinsi}</td>
                 <td className="border px-4 py-2 text-red-600">
