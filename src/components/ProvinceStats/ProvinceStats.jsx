@@ -1,6 +1,6 @@
-import data from "../../utils/constants/provinces";
+// import data from "../../utils/constants/provinces";
 
-function ProvinceStats() {
+function ProvinceStats({ covid }) {
   return (
     <section className="py-8 mb-8">
       <h1 className="text-3xl font-bold text-center text-blue-700">Provinsi</h1>
@@ -22,7 +22,7 @@ function ProvinceStats() {
           </thead>
 
           <tbody>
-            {data.provinces.map((item, index) => (
+            {covid.provinces.map((item, index) => (
               <tr key={item.provinsi} className="text-center">
                 <td className="border px-4 py-2">{index + 1}</td>
                 <td className="border px-4 py-2">{item.provinsi}</td>

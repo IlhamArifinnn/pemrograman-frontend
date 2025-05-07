@@ -1,6 +1,55 @@
+import { useState } from "react";
 import Button from "../Button/Button";
+import data from "../../utils/constants/provinces";
 
-function CovidForm() {
+function CovidForm({ covid, setCovid }) {
+  const [provinsi, setProvinsi] = useState("");
+  const [status, setStatus] = useState("");
+  const [jumlah, setJumlah] = useState();
+
+  // function handleSubmit(e) {
+  //   e.preventDefault();
+
+  //   const newCovid = {
+  //     provinsi: provinsi,
+  //     positif: status,
+  //     sembuh: status,
+  //     meninggal: status,
+  //     jumlah: jumlah,
+  //   };
+
+  //   setCovid([...covid, newCovid]);
+
+  //   setProvinsi("");
+  //   setStatus("");
+  //   setJumlah();
+  // }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    const updatedProvinces = covid.provinces.map((item) => {
+      if (item.provinsi === provinsi) {
+        // Salin data provinsi lama dan update status sesuai input
+        return {
+          ...item,
+          [status]: item[status] + parseInt(jumlah, 10),
+        };
+      }
+      return item;
+    });
+
+    setCovid({
+      ...covid,
+      provinces: updatedProvinces,
+    });
+
+    // Reset form
+    setProvinsi("");
+    setStatus("");
+    setJumlah("");
+  }
+
   return (
     <section className="bg-blue-50 p-5 shadow-md flex flex-col gap-6 md:flex-row">
       <div className="flex items-center justify-center md:w-1/2">
@@ -16,19 +65,26 @@ function CovidForm() {
           Form Covid
         </h1>
 
-        <form className="p-5 flex flex-col gap-4">
+        <form className="p-5 flex flex-col gap-4" onSubmit={handleSubmit}>
           <div className="flex flex-col">
             <label htmlFor="provinsi" className="text-blue-600 mb-1">
               Provinsi
             </label>
-            <input
-              type="text"
+            <select
               name="provinsi"
               id="provinsi"
-              placeholder="Masukan Provinsi"
+              value={provinsi}
+              onChange={(e) => setProvinsi(e.target.value)}
               className="p-2 border rounded-lg"
               required
-            />
+            >
+              <option value="">Pilih Provinsi</option>
+              {data.provinces.map((item) => (
+                <option key={item.provinsi} value={item.provinsi}>
+                  {item.provinsi}
+                </option>
+              ))}
+            </select>
           </div>
 
           <div className="flex flex-col">
@@ -38,6 +94,8 @@ function CovidForm() {
             <select
               name="status"
               id="status"
+              value={status}
+              onChange={(e) => setStatus(e.target.value)}
               className="p-2 border rounded-lg"
               required
             >
@@ -58,6 +116,8 @@ function CovidForm() {
               name="jumlah"
               id="jumlah"
               min="0"
+              value={jumlah}
+              onChange={(e) => setJumlah(e.target.value)}
               placeholder="Masukan Jumlah"
               className="p-2 border rounded-lg"
               required
