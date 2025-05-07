@@ -7,24 +7,6 @@ function CovidForm({ covid, setCovid }) {
   const [status, setStatus] = useState("");
   const [jumlah, setJumlah] = useState();
 
-  // function handleSubmit(e) {
-  //   e.preventDefault();
-
-  //   const newCovid = {
-  //     provinsi: provinsi,
-  //     positif: status,
-  //     sembuh: status,
-  //     meninggal: status,
-  //     jumlah: jumlah,
-  //   };
-
-  //   setCovid([...covid, newCovid]);
-
-  //   setProvinsi("");
-  //   setStatus("");
-  //   setJumlah();
-  // }
-
   function handleSubmit(e) {
     e.preventDefault();
 
