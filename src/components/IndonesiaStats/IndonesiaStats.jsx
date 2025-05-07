@@ -26,7 +26,7 @@ function IndonesiaStats() {
               {item.status}
             </h2>
             <h1 className={`text-2xl font-bold ${statusColor[item.status]}`}>
-              {item.total.toLocaleString()}
+              {item.total.toLocaleString("id-ID")}
             </h1>
             <a
               href={item.detail}
