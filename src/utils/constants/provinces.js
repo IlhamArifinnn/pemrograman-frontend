@@ -1,5 +1,5 @@
 const data = {
-  last_update: "2024-04-01",
+  last_update: "2025-05-01",
   total_province: 34,
   provinces: [
     {

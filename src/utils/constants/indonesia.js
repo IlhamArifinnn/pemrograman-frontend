@@ -1,18 +1,18 @@
 const data = {
-  last_update: "2024-04-01",
+  last_update: "2025-05-01",
   indonesia: [
     {
-      status: "Positif",
+      status: "Confirmed",
       total: 6012818,
       detail: "https://covid19.mathdro.id/api/countries/indonesia/confirmed",
     },
     {
-      status: "Sembuh",
+      status: "Recovered",
       total: 5750802,
       detail: "https://covid19.mathdro.id/api/countries/indonesia/recovered",
     },
     {
-      status: "Meninggal",
+      status: "Death",
       total: 155089,
       detail: "https://covid19.mathdro.id/api/countries/indonesia/deaths",
     },
