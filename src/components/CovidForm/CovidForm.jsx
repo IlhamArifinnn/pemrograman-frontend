@@ -33,7 +33,10 @@ function CovidForm({ covid, setCovid }) {
   }
 
   return (
-    <section className="bg-blue-50 p-5 shadow-md flex flex-col gap-6 md:flex-row">
+    <section
+      id="covid-form"
+      className="bg-blue-50 p-5 shadow-md flex flex-col gap-6 md:flex-row"
+    >
       <div className="flex items-center justify-center md:w-1/2">
         <img
           src="/consultation.png"

@@ -16,7 +16,7 @@ function Home() {
       <main>
         <Hero />
         <IndonesiaStats />
-        <ProvinceStats covid={covid} />
+        <ProvinceStats data={covid} />
         <CovidForm covid={covid} setCovid={setCovid} />
       </main>
       <Footer />

@@ -1,11 +1,15 @@
 function Footer() {
   return (
-    <footer className="bg-blue-400 text-white p-4 flex flex-col gap-3 sm:flex-row md:justify-around md:items-center">
+    <footer id="footer" className="bg-blue-400 text-white p-4 flex flex-col gap-3 sm:flex-row md:justify-around md:items-center">
       <div className="flex justify-start flex-col">
         <h1>Covid ID</h1>
         <h2>
           Developed by{" "}
-          <a href="#" className="hover:underline">
+          <a
+            href="https://linktree-ipin.vercel.app/"
+            target="_blank"
+            className="hover:underline"
+          >
             IlhamArifinnn
           </a>
         </h2>
@@ -13,22 +17,22 @@ function Footer() {
 
       <ul className="flex gap-5 md:gap-10">
         <li>
-          <a href="#!" className="hover:underline">
+          <a href="#hero" className="hover:underline">
             Global
           </a>
         </li>
         <li>
-          <a href="#!" className="hover:underline">
+          <a href="#indonesia" className="hover:underline">
             Indonesia
           </a>
         </li>
         <li>
-          <a href="#!" className="hover:underline">
+          <a href="#provinsi" className="hover:underline">
             Provinsi
           </a>
         </li>
         <li>
-          <a href="#!" className="hover:underline">
+          <a href="#footer" className="hover:underline">
             Tentang Kami
           </a>
         </li>

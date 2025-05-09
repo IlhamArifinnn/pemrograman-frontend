@@ -2,7 +2,10 @@ import Button from "../Button/Button";
 
 function Hero() {
   return (
-    <section className="flex flex-col m-4 justify-around items-center mb-4 mt-30 md:flex-row md:mt-20">
+    <section
+      id="hero"
+      className="flex flex-col m-4 justify-around items-center mb-4 mt-2 md:flex-row lg:mt-10"
+    >
       <div className="p-4 md:w-1/2 lg:w-2/5">
         <h1 className="text-4xl font-bold text-blue-700">Covid ID</h1>
         <h2 className="text-lg text-blue-600 italic mt-2">

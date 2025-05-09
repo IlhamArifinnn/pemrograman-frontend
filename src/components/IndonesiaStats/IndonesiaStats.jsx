@@ -8,8 +8,8 @@ function IndonesiaStats() {
   };
 
   return (
-    <section className="py-8 mb-8 bg-blue-50 my-4">
-      <h1 className="text-3xl font-bold text-center text-blue-700">
+    <section id="indonesia" className="py-8 mb-8 bg-blue-50 my-4">
+      <h1 className="text-3xl font-bold text-center text-blue-700 md:mt-10">
         Indonesia
       </h1>
       <h2 className="mb-4 text-center text-blue-600">
