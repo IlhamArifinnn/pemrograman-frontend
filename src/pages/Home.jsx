@@ -11,20 +11,18 @@ function Main() {
   const [movies, setMovies] = useState(data);
 
   return (
-    <main>
+    <>
       <Hero />
       <Movies movies={movies} setMovies={setMovies} />
       <Form movies={movies} setMovies={setMovies} />
-    </main>
+    </>
   );
 }
 
 function Home() {
   return (
     <>
-      <Navbar />
       <Main />
-      <Footer />
     </>
   );
 }
