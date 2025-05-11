@@ -4,64 +4,82 @@ import React, { useState } from "react";
 import Alert from "../Alert/Alert";
 
 function Form({ movies, setMovies }) {
-  const [title, setTitle] = useState("");
-  const [date, setDate] = useState("");
-  const [type, setType] = useState("");
-  const [poster, setPoster] = useState("");
+  // handle multiple input dengan 1 state
+  // membuat state formData
+  // nilai state menggunakan object
+  const [formData, setFormData] = useState({
+    title: "",
+    year: "",
+    type: "",
+    poster: "",
+  });
+
+  // destructing state formData
+  const { title, year, type, poster } = formData;
 
   // membuat state validasi form
-  const [isTitleError, setIsTitleError] = useState(false);
-  const [isDateError, setIsDateError] = useState(false);
-  const [isTypeError, setIsTypeError] = useState(false);
-  const [isPosterError, setIsPosterError] = useState(false);
+  const [formValidate, setFormValidate] = useState({
+    isTitleError: false,
+    isDateError: false,
+    isTypeError: false,
+    isPosterError: false,
+  });
 
-  function handleTitle(e) {
-    setTitle(e.target.value);
+  // destructing state formValidate
+  const { isTitleError, isDateError, isTypeError, isPosterError } =
+    formValidate;
+
+  // fungsi handleChange untuk handle input form(dinamis)
+  function handleChange(e) {
+    // destructing name and value
+    const { name, value } = e.target;
+
+    // update state dengan object baru
+    // - copy state sebelumnya menggunakan spread operator
+    // - update property berdasarkan apapun nilai name(computed property)
+    setFormData({ ...formData, [name]: value });
   }
 
-  function handleDate(e) {
-    setDate(e.target.value);
+  function validate() {
+    const error = {
+      isTitleError: title === "",
+      isDateError: year === "",
+      isTypeError: type === "",
+      isPosterError: poster === "",
+    };
+    setFormValidate(error);
+
+    return !Object.values(error).includes(true);
   }
 
-  function handleType(e) {
-    setType(e.target.value);
-  }
-  function handlePoster(e) {
-    setPoster(e.target.value);
-  }
-
-  function handleSubmit(e) {
-    e.preventDefault();
-
-    const isTitleEmpty = title.trim() === "";
-    const isDateEmpty = date.trim() === "";
-    const isTypeEmpty = type.trim() === "";
-    const isPosterEmpty = poster.trim() === "";
-
-    setIsTitleError(isTitleEmpty);
-    setIsDateError(isDateEmpty);
-    setIsTypeError(isTypeEmpty);
-    setIsPosterError(isPosterEmpty);
-
-    if (isTitleEmpty || isDateEmpty || isTypeEmpty || isPosterEmpty) {
-      return; // hentikan jika ada yang kosong
-    }
-
+  function addMovie() {
     const movie = {
       id: nanoid(10),
       title: title,
-      year: date,
+      year: year,
       type: type,
       poster: poster,
     };
 
     setMovies([...movies, movie]);
 
+    //  reset form
     // Reset form
-    setTitle("");
-    setDate("");
-    setType("");
-    setPoster("");
+    setFormData({
+      title: "",
+      year: "",
+      type: "",
+      poster: "",
+    });
+  }
+
+  // fungsi handleSubmit menjalankan 2 fungsi:
+  // - validate: fungsi validasi
+  // - addMovie: menambahkan movie
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    validate() && addMovie();
   }
 
   return (
@@ -82,7 +100,7 @@ function Form({ movies, setMovies }) {
                 id="title"
                 placeholder="enter title"
                 value={title}
-                onChange={handleTitle}
+                onChange={handleChange}
               />
 
               {isTitleError && (
@@ -99,8 +117,8 @@ function Form({ movies, setMovies }) {
                 name="year"
                 id="year"
                 placeholder="enter year"
-                value={date}
-                onChange={handleDate}
+                value={year}
+                onChange={handleChange}
               />
 
               {isDateError && (
@@ -112,7 +130,12 @@ function Form({ movies, setMovies }) {
 
             <div className={styles.form__input__type}>
               <label htmlFor="type">Type</label>
-              <select name="type" id="type" value={type} onChange={handleType}>
+              <select
+                name="type"
+                id="type"
+                value={type}
+                onChange={handleChange}
+              >
                 <option value="">Select Type</option>
                 <option value="Action">Action</option>
                 <option value="Drama">Drama</option>
@@ -135,7 +158,7 @@ function Form({ movies, setMovies }) {
                 id="poster"
                 placeholder="enter url poster"
                 value={poster}
-                onChange={handlePoster}
+                onChange={handleChange}
               />
 
               {isPosterError && (
