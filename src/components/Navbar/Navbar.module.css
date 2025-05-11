@@ -32,6 +32,18 @@
   margin-bottom: 1rem;
 }
 
+.navbar__item a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.navbar__item a:hover {
+  color: #004e64;
+}
+
 /* Medium Screen */
 @media (min-width: 768px) {
   .navbar {
