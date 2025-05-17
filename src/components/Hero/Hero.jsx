@@ -1,23 +1,34 @@
+import { useEffect, useState } from "react";
 import styles from "./Hero.module.css";
-import React from "react";
 
 function Hero() {
+  const [movie, setMovie] = useState("");
+  useEffect(() => {
+    async function getMovies() {
+      const url = "https://www.omdbapi.com/?apikey=fcf50ae6&i=tt2975590";
+
+      // melakukan fetch data dari API
+      const response = await fetch(url);
+      const data = await response.json();
+
+      setMovie(data);
+    }
+
+    getMovies();
+  }, []);
+
   return (
     <div className={styles.container}>
       <section className={styles.hero}>
         <div className={styles.hero__left}>
-          <h2 className={styles.hero__title}>Judul Movie</h2>
-          <h3 className={styles.hero__genre}>Genre: Thriller, Drama, Comedy</h3>
-          <p className={styles.hero__description}>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos,
-            possimus dolorem? Ea harum voluptas consectetur accusantium libero
-            unde sunt rem ex, ullam similique molestias impedit.{" "}
-          </p>
+          <h2 className={styles.hero__title}>{movie.Title}</h2>
+          <h3 className={styles.hero__genre}>Genre: {movie.Genre}</h3>
+          <p className={styles.hero__description}>{movie.Plot}</p>
           <button className={styles.hero__button}>Watch Now</button>
         </div>
 
         <div className={styles.hero__right}>
-          <img className={styles.hero__image} src="hero.jpg" alt="Movie" />
+          <img className={styles.hero__image} src={movie.Poster} alt="Movie" />
         </div>
       </section>
     </div>
