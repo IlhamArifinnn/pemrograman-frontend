@@ -62,6 +62,9 @@
 
   .navbar__list {
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
 
   .navbar__item {

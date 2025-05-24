@@ -1,14 +1,27 @@
-import styles from "./Footer.module.css";
-import React from "react";
+import styled from "styled-components";
+
+const StyledFooter = styled.footer`
+  background-color: #10caa7;
+  color: #fff;
+  padding: 0.3rem;
+  text-align: center;
+
+  h2 {
+    margin: 1rem;
+  }
+  p {
+    margin-bottom: 1rem;
+  }
+`;
 
 function Footer() {
-  return (
-    <div className={styles.container}>
-      <footer className={styles.footer}>
-        <h2 className={styles.footer__title}>Movie App</h2>
-        <p className={styles.footer__author}>Created by IlhamArifinnn</p>
+  return (  
+    <StyledFooter>
+      <footer>
+        <h2>Movie App</h2>
+        <p>Created by IlhamArifinnn</p>
       </footer>
-    </div>
+    </StyledFooter>
   );
 }
 
