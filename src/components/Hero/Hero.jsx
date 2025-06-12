@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Button from "../ui/Button/Button";
 import styled from "styled-components";
+import axios from "axios";
 
 const StyledHero = styled.div`
   margin: 1rem;
@@ -22,29 +23,30 @@ const StyledHero = styled.div`
   }
 
   .hero__title {
-    color: #10caa7;
+    color: #901e3e;
     margin-bottom: 1rem;
     font-size: 2.44rem;
   }
 
   .hero__genre {
-    color: #347568;
+    color: #521828;
     margin-bottom: 1rem;
-    font-size: 1.59rem;
+    font-size: 1.2rem;
   }
 
   .hero__description {
     color: #64748b;
-    margin-bottom: 1rem;
+    margin-bottom: 0.9rem;
   }
 
   .hero__button {
     padding: 0.8rem 2rem;
     border: none;
     border-radius: 10px;
-    background-color: #10caa7;
+    background-color: #901e3e;
     color: #fff;
     cursor: pointer;
+    text-decoration: none;
   }
   .hero__button:hover {
     background-color: #0aa38b;
@@ -81,6 +83,18 @@ const StyledHero = styled.div`
       flex-basis: 40%;
     }
 
+    .hero__title {
+      margin-bottom: 0;
+    }
+
+    .hero__genre {
+      margin-bottom: 1rem;
+    }
+
+    .hero__description {
+      margin-bottom: 2rem;
+    }
+
     .hero__right {
       flex-basis: 50%;
       display: flex;
@@ -91,35 +105,53 @@ const StyledHero = styled.div`
 
 function Hero() {
   const [movie, setMovie] = useState("");
+  const API_KEY = import.meta.env.VITE_API_KEY;
+  const genres = movie && movie.genres.map((genre) => genre.name).join(", ");
+  const idTrailer = movie && movie.videos.results[0].key;
+
   useEffect(() => {
-    async function getMovies() {
-      const url = "https://www.omdbapi.com/?apikey=fcf50ae6&i=tt2975590";
-
-      // melakukan fetch data dari API
-      const response = await fetch(url);
-      const data = await response.json();
-
-      setMovie(data);
+    async function fetchTrendingMovie() {
+      const url = `https://api.themoviedb.org/3/trending/movie/day?api_key=${API_KEY}`;
+      const response = await axios(url);
+      return response.data.results[0];
     }
 
-    getMovies();
+    async function fetchDetailMovie() {
+      const trendingMovie = await fetchTrendingMovie();
+      const id = trendingMovie.id;
+      const url = `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&append_to_response=videos`;
+      const response = await axios(url);
+      setMovie(response.data);
+    }
+
+    fetchDetailMovie();
   }, []);
 
   return (
     <StyledHero>
       <section className="hero">
         <div className="hero__left">
-          <h2 className="hero__title">{movie.Title}</h2>
-          <h3 className="hero__genre">Genre: {movie.Genre}</h3>
-          <p className="hero__description">{movie.Plot}</p>
+          <h2 className="hero__title">{movie.title}</h2>
+          <h3 className="hero__genre">Genre: {genres}</h3>
+          <p className="hero__description">{movie.overview}</p>
           {/* <button className={hero__button}>Watch Now</button> */}
-          <Button variant="primary" className="hero__button">
-            Watch Now
+          <Button
+            variant="primary"
+            className="hero__button"
+            as="a"
+            href={`https://www.youtube.com/watch?v=${idTrailer}`}
+            target="_blank"
+          >
+            Watch Movie
           </Button>
         </div>
 
         <div className="hero__right">
-          <img className="hero__image" src={movie.Poster} alt="Movie" />
+          <img
+            className="hero__image"
+            src={`https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`}
+            alt="Movie"
+          />
         </div>
       </section>
     </StyledHero>

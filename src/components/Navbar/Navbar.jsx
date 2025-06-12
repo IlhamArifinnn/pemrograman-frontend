@@ -2,7 +2,7 @@ import { Link } from "react-router";
 import styled from "styled-components";
 
 const StyledNavbar = styled.div`
-  background-color: #10caa7;
+  background-color: #901e3e;
   padding: 1rem;
   color: #fff;
 
@@ -43,7 +43,7 @@ const StyledNavbar = styled.div`
   }
 
   .navbar__item a:hover {
-    color: #004e64;
+    color: black;
   }
 
   /* Medium Screen */

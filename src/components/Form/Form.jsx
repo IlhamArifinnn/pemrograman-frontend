@@ -26,7 +26,7 @@ const StyledForm = styled.div`
   }
 
   .form__title {
-    color: #10caa7;
+    color: #901E3E;
     margin-bottom: 0.5rem;
     font-size: 2.44rem;
   }
@@ -74,7 +74,7 @@ const StyledForm = styled.div`
     padding: 0.8rem 2rem;
     border: none;
     border-radius: 10px;
-    background-color: #10caa7;
+    background-color: #901E3E;
     color: #fff;
   }
 
@@ -122,7 +122,7 @@ const StyledForm = styled.div`
     }
 
     .form__title {
-      color: #10caa7;
+      color: #901E3E;
       font-size: 2rem;
       font-weight: bold;
       margin-bottom: 1rem;
@@ -151,13 +151,13 @@ const StyledForm = styled.div`
     select {
       padding: 0.6rem;
       border-radius: 6px;
-      border: 1.5px solid #10caa7;
+      border: 1.5px solid #901E3E;
       outline: none;
       font-size: 1rem;
     }
 
     .form__button {
-      background-color: #10caa7;
+      background-color: #901E3E;
       color: white;
       padding: 0.7rem;
       border: none;

@@ -19,7 +19,7 @@
 }
 
 .hero__title {
-  color: #10caa7;
+  color: #901E3E;
   margin-bottom: 1rem;
   font-size: 2.44rem;
 }
@@ -39,12 +39,12 @@
   padding: 0.8rem 2rem;
   border: none;
   border-radius: 10px;
-  background-color: #10caa7;
+  background-color: #901E3E;
   color: #fff;
   cursor: pointer;
 }
 .hero__button:hover {
-  background-color: #0aa38b;
+  background-color: #62152b;
 }
 
 .hero__image {

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Movie from "../Movie/Movie";
-import { nanoid } from "nanoid";
+// import { nanoid } from "nanoid";
 
 const StyledMovies = styled.div`
   margin: 1rem;
@@ -18,19 +18,21 @@ const StyledMovies = styled.div`
   .movies__title {
     margin: 1rem;
     font-size: 2.44rem;
-    color: #10caa7;
+    color: #901e3e;
   }
 
   .movie__container {
     display: flex;
     flex-direction: column;
+    align-items: stretch; /* Ini penting untuk membuat semua card sama tinggi */
+    gap: 1rem; /* Jarak antar item */
   }
 
   .movie__btn {
     padding: 0.8rem 2rem;
     border: none;
     border-radius: 10px;
-    background-color: #10caa7;
+    background-color: #901e3e;
     color: #fff;
     margin-bottom: 0.5rem;
     cursor: pointer;
@@ -41,7 +43,8 @@ const StyledMovies = styled.div`
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: center;
-      align-items: center;
+      align-items: stretch; /* Membuat semua item memiliki tinggi yang sama */
+      gap: 0; /* Reset gap karena margin sudah diatur di Movie component */
     }
   }
 
@@ -52,8 +55,8 @@ const StyledMovies = styled.div`
   }
 `;
 
-function Movies({ movies, setMovies }) {
-  function handleClick() {
+function Movies({ movies, movie__title = "Latest Movie" }) {
+  /**   function handleClick() {
     const movie = {
       id: nanoid(10),
       title: "Jigsaw Spiral",
@@ -61,16 +64,16 @@ function Movies({ movies, setMovies }) {
       type: "Movie",
       poster: "https://picsum.photos/300/400",
     };
-
     // update state movies: setMovies
     // melakukan spread operator untuk copy and merge array
     setMovies([...movies, movie]);
   }
+  */
 
   return (
     <StyledMovies>
       <section className="movies">
-        <h2 className="movies__title">Latest Movies</h2>
+        <h2 className="movies__title">{movie__title}</h2>
         <div className="movie__container">
           {/* 
         1. looping movies (array)
@@ -80,9 +83,9 @@ function Movies({ movies, setMovies }) {
             return <Movie key={movie.id} movie={movie} />;
           })}
         </div>
-        <button className="movie__btn" onClick={handleClick}>
+        {/* <button className="movie__btn" onClick={handleClick}>
           Add Movie
-        </button>
+        </button> */}
       </section>
     </StyledMovies>
   );
