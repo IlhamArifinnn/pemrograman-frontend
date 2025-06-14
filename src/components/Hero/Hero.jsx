@@ -49,7 +49,7 @@ const StyledHero = styled.div`
     text-decoration: none;
   }
   .hero__button:hover {
-    background-color: #0aa38b;
+    background-color: #6d132d;
   }
 
   .hero__image {
