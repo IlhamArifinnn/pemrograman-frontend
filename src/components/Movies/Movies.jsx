@@ -55,7 +55,7 @@ const StyledMovies = styled.div`
   }
 `;
 
-function Movies({ movies, movie__title = "Latest Movie" }) {
+function Movies({ movies, title = "Latest Movie" }) {
   /**   function handleClick() {
     const movie = {
       id: nanoid(10),
@@ -73,7 +73,7 @@ function Movies({ movies, movie__title = "Latest Movie" }) {
   return (
     <StyledMovies>
       <section className="movies">
-        <h2 className="movies__title">{movie__title}</h2>
+        <h2 className="movies__title">{title}</h2>
         <div className="movie__container">
           {/* 
         1. looping movies (array)

@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import styled from "styled-components";
 
 const StyledMovie = styled.div`
@@ -31,6 +32,14 @@ const StyledMovie = styled.div`
     justify-content: flex-start;
   }
 
+  a {
+    text-decoration: none;
+    border-radius: 12px;
+  }
+  a:hover {
+    color: #5a1529;
+  }
+
   h3 {
     color: #901e3e;
     font-size: 1.4rem;
@@ -38,7 +47,7 @@ const StyledMovie = styled.div`
     line-height: 1.3;
     min-height: 3.6rem;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
   }
 
@@ -84,14 +93,16 @@ function Movie({ movie }) {
         month: "long",
         year: "numeric",
       }).format(new Date(year))
-    : "Unknown";
+    : "";
 
   return (
     <StyledMovie>
       <div className="content">
         <img src={movie.poster || tmdbImage} alt={movie.title} />
       </div>
-      <h3>{movie.title}</h3>
+      <Link to={`/movie/${movie.id}`}>
+        <h3>{movie.title}</h3>
+      </Link>
       <p>{formattedDate}</p>
     </StyledMovie>
   );

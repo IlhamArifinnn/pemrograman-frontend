@@ -9,6 +9,7 @@ import CounterButton from "./components/CounterButton/CounterButton";
 import { ThemeProvider } from "styled-components";
 import theme from "./utils/constants/theme";
 import GlobalStyle from "./components/GlobalStyle";
+import Detail from "./pages/Detail";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
           <Route path="/movie/popular" element={<Popular />}></Route>
           <Route path="/movie/now" element={<NowPlaying />}></Route>
           <Route path="/movie/top" element={<TopRated />}></Route>
+          <Route path="/movie/:id" element={<Detail />}></Route>
           <Route path="/button" element={<CounterButton />}></Route>
         </Routes>
       </Layout>
