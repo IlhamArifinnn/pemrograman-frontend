@@ -97,10 +97,10 @@ function Movie({ movie }) {
 
   return (
     <StyledMovie>
-      <div className="content">
-        <img src={movie.poster || tmdbImage} alt={movie.title} />
-      </div>
       <Link to={`/movie/${movie.id}`}>
+        <div className="content">
+          <img src={movie.poster || tmdbImage} alt={movie.title} />
+        </div>
         <h3>{movie.title}</h3>
       </Link>
       <p>{formattedDate}</p>

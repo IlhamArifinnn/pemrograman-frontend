@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Button from "../ui/Button/Button";
 import styled from "styled-components";
 import axios from "axios";
+import ENDPOINTS from "@/utils/constants/endpoints";
 
 const StyledHero = styled.div`
   margin: 1rem;
@@ -111,16 +112,16 @@ function Hero() {
 
   useEffect(() => {
     async function fetchTrendingMovie() {
-      const url = `https://api.themoviedb.org/3/trending/movie/day?api_key=${API_KEY}`;
-      const response = await axios(url);
+      // const url = `https://api.themoviedb.org/3/trending/movie/day?api_key=${API_KEY}`;
+      const response = await axios(ENDPOINTS.TRENDING);
       return response.data.results[0];
     }
 
     async function fetchDetailMovie() {
       const trendingMovie = await fetchTrendingMovie();
       const id = trendingMovie.id;
-      const url = `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&append_to_response=videos`;
-      const response = await axios(url);
+      // const url = `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&append_to_response=videos`;
+      const response = await axios(ENDPOINTS.DETAIL(id));
       setMovie(response.data);
     }
 

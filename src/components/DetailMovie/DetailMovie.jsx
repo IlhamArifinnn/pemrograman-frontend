@@ -75,7 +75,8 @@ function DetailMovie() {
   const [movie, setMovie] = useState(null);
 
   const genres = movie && movie.genres.map((genre) => genre.name).join(", ");
-  const trailer = movie && `youtube.com/watch?v=${movie.videos.results[0].key}`;
+  const trailer =
+    movie && `https://www.youtube.com/watch?v=${movie.videos.results[0].key}`;
 
   useEffect(() => {
     async function getDetailMovie() {
