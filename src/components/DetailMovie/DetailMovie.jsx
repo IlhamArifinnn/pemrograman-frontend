@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import Button from "../ui/Button/Button";
 import { useParams } from "react-router";
+import ENDPOINTS from "@/utils/constants/endpoints";
 
 const StyledDetailMovie = styled.div`
   // Mobile Screen
@@ -80,10 +81,10 @@ function DetailMovie() {
 
   useEffect(() => {
     async function getDetailMovie() {
-      const API_KEY = import.meta.env.VITE_API_KEY;
-      const params = `?api_key=${API_KEY}&append_to_response=videos`;
-      const url = `https://api.themoviedb.org/3/movie/${id}${params}`;
-      const response = await axios(url);
+      // const API_KEY = import.meta.env.VITE_API_KEY;
+      // const params = `?api_key=${API_KEY}&append_to_response=videos`;
+      // const url = `https://api.themoviedb.org/3/movie/${id}${params}`;
+      const response = await axios(ENDPOINTS.DETAIL(id));
 
       // update state movie with response
       setMovie(response.data);
