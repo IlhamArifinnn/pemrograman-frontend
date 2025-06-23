@@ -1,16 +1,15 @@
 import Hero from "@/components/Hero/Hero";
 import Movies from "@/components/Movies/Movies";
+import MoviesContext from "@/context/MoviesContext";
 import ENDPOINTS from "@/utils/constants/endpoints";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 
 function Popular() {
-  const [movies, setMovies] = useState([]);
+  const { setMovies } = useContext(MoviesContext);
 
   useEffect(() => {
     async function fetchPopularMovies() {
-      // save api key and url populat movie
-
       // fecth data using axios
       const response = await axios(ENDPOINTS.POPULAR);
 
@@ -24,7 +23,7 @@ function Popular() {
   return (
     <div>
       <Hero />
-      <Movies movies={movies} title="Popular Movie" />
+      <Movies title="Popular Movie" />
     </div>
   );
 }

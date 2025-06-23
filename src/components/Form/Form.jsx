@@ -1,8 +1,10 @@
 import { nanoid } from "nanoid";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Alert from "../Alert/Alert";
 import Button from "../ui/Button/Button";
 import styled from "styled-components";
+import { useNavigate } from "react-router";
+import MoviesContext from "@/context/MoviesContext";
 
 const StyledForm = styled.div`
   display: flex;
@@ -26,7 +28,7 @@ const StyledForm = styled.div`
   }
 
   .form__title {
-    color: #901E3E;
+    color: #901e3e;
     margin-bottom: 0.5rem;
     font-size: 2.44rem;
   }
@@ -74,7 +76,7 @@ const StyledForm = styled.div`
     padding: 0.8rem 2rem;
     border: none;
     border-radius: 10px;
-    background-color: #901E3E;
+    background-color: #901e3e;
     color: #fff;
   }
 
@@ -122,7 +124,7 @@ const StyledForm = styled.div`
     }
 
     .form__title {
-      color: #901E3E;
+      color: #901e3e;
       font-size: 2rem;
       font-weight: bold;
       margin-bottom: 1rem;
@@ -151,13 +153,13 @@ const StyledForm = styled.div`
     select {
       padding: 0.6rem;
       border-radius: 6px;
-      border: 1.5px solid #901E3E;
+      border: 1.5px solid #901e3e;
       outline: none;
       font-size: 1rem;
     }
 
     .form__button {
-      background-color: #901E3E;
+      background-color: #901e3e;
       color: white;
       padding: 0.7rem;
       border: none;
@@ -169,12 +171,16 @@ const StyledForm = styled.div`
     }
 
     .form__button:hover {
-      background-color: #0aa38b;
+      background-color: #6d132d;
     }
   }
 `;
 
-function Form({ movies, setMovies }) {
+function Form() {
+  // buat navigation dari userrNavigate
+  const navigation = useNavigate();
+  const { movies, setMovies } = useContext(MoviesContext);
+
   // handle multiple input dengan 1 state
   // membuat state formData
   // nilai state menggunakan object
@@ -242,6 +248,9 @@ function Form({ movies, setMovies }) {
       type: "",
       poster: "",
     });
+
+    // redirect ke halaman home
+    navigation("/");
   }
 
   // fungsi handleSubmit menjalankan 2 fungsi:
@@ -257,7 +266,7 @@ function Form({ movies, setMovies }) {
     <StyledForm>
       <section className="form">
         <div className="form__left">
-          <img className="form__image" src="cinema.jpg" alt="Movie" />
+          <img className="form__image" src="/cinema.jpg" alt="Movie" />
         </div>
 
         <div className="form__right">

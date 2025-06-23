@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Movie from "../Movie/Movie";
-// import { nanoid } from "nanoid";
+import { useContext } from "react";
+import MoviesContext from "@/context/MoviesContext";
 
 const StyledMovies = styled.div`
   margin: 1rem;
@@ -55,20 +56,9 @@ const StyledMovies = styled.div`
   }
 `;
 
-function Movies({ movies, title = "Latest Movie" }) {
-  /**   function handleClick() {
-    const movie = {
-      id: nanoid(10),
-      title: "Jigsaw Spiral",
-      year: 2021,
-      type: "Movie",
-      poster: "https://picsum.photos/300/400",
-    };
-    // update state movies: setMovies
-    // melakukan spread operator untuk copy and merge array
-    setMovies([...movies, movie]);
-  }
-  */
+function Movies({ title = "Latest Movie" }) {
+  // use movies context and get context value
+  const { movies } = useContext(MoviesContext);
 
   return (
     <StyledMovies>

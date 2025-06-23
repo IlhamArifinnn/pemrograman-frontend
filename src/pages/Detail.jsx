@@ -1,14 +1,15 @@
 import DetailMovie from "@/components/DetailMovie/DetailMovie";
 import Movies from "@/components/Movies/Movies";
+import MoviesContext from "@/context/MoviesContext";
 import ENDPOINTS from "@/utils/constants/endpoints";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { useParams } from "react-router";
 
 function Detail() {
   const { id } = useParams();
   // create movies state
-  const [movies, setMovies] = useState([]);
+  const { setMovies } = useContext(MoviesContext);
 
   useEffect(() => {
     async function getRecommedationMovies() {
@@ -27,7 +28,6 @@ function Detail() {
     <>
       <DetailMovie />
       <Movies
-        movies={movies}
         title="Recommendation Movies.
 "
       />
