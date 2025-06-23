@@ -1,0 +1,37 @@
+.movie {
+  margin-bottom: 1rem;
+}
+
+.movie__image {
+  border-radius: 25px;
+  max-width: 100%;
+  height: auto;
+}
+
+.movie__title {
+  color: #901e3e;
+  font-size: 1.8rem;
+  margin-bottom: 0.3rem;
+}
+
+.movie__date {
+  color: #64748b;
+}
+
+/* Medium Screen */
+@media (min-width: 768px) {
+  .movie {
+    flex-basis: 50%;
+  }
+
+  .movie__image {
+    border-radius: 25px;
+  }
+}
+
+@media (min-width: 992px) {
+  .movie {
+    flex-basis: 20%;
+    padding: 1rem;
+  }
+}
