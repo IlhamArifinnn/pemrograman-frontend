@@ -13,11 +13,11 @@ function CounterButton() {
    * param2: dijalankan ketika state di dalam array berubah
    */
   useEffect(() => {
-    console.log("Lifecycle: Component dimount");
+    // console.log("Lifecycle: Component dimount");
     document.title = `Result: ${counter}`;
   }, [counter]);
 
-  console.log("Lifecycle: Component dirender");
+  // console.log("Lifecycle: Component dirender");
 
   return (
     <>
