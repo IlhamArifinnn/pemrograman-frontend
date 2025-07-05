@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { Link } from "react-router";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,24 +36,24 @@ function Navbar() {
         } sm:flex flex-col sm:flex-row gap-4 sm:gap-6 items-center`}
       >
         <li>
-          <a href="#hero" className="hover:underline">
+          <Link to="/" className="hover:underline">
             Global
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="#indonesia" className="hover:underline">
+          <Link to="/indonesia" className="hover:underline">
             Indonesia
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="#provinsi" className="hover:underline">
+          <Link to="/provinsi" className="hover:underline">
             Provinsi
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="#footer" className="hover:underline">
+          <Link to="/about" className="hover:underline">
             Tentang Kami
-          </a>
+          </Link>
         </li>
       </ul>
     </nav>
