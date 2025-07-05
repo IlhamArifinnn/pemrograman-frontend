@@ -26,7 +26,7 @@ function Hero() {
         <img
           src="/medical-team.png"
           alt="gambar hero"
-          className="w-[80%] max-w-md h-auto object-cover"
+          className="w-[75%] max-w-md h-auto object-cover"
         />
       </div>
     </section>

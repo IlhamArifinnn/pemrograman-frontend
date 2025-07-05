@@ -41,7 +41,7 @@ function CovidForm({ covid, setCovid }) {
         <img
           src="/consultation.png"
           alt="Form ilustration"
-          className="w-[70%] max-w-md h-auto object-contain md:w-[80%]"
+          className="w-[70%] max-w-md h-auto object-contain md:w-[60%]"
         />
       </div>
 
