@@ -1,5 +1,15 @@
+import Hero from "../components/Hero/Hero";
+import CovidForm from "../components/CovidForm/CovidForm";
+import ProvinceStats from "../components/ProvinceStats/ProvinceStats";
+
 function Provinsi() {
-  return <div>Provinsi</div>;
+  return (
+    <>
+      <Hero />
+      <ProvinceStats title="Provinsi" />
+      <CovidForm />
+    </>
+  );
 }
 
 export default Provinsi;

@@ -1,6 +1,11 @@
+import { Link } from "react-router";
+
 function Footer() {
   return (
-    <footer id="footer" className="bg-blue-400 text-white p-4 flex flex-col gap-3 sm:flex-row md:justify-around md:items-center">
+    <footer
+      id="footer"
+      className="bg-blue-400 text-white p-4 flex flex-col gap-3 sm:flex-row md:justify-around md:items-center"
+    >
       <div className="flex justify-start flex-col">
         <h1>Covid ID</h1>
         <h2>
@@ -17,24 +22,24 @@ function Footer() {
 
       <ul className="flex gap-5 md:gap-10">
         <li>
-          <a href="#hero" className="hover:underline">
+          <Link to="/" className="hover:underline">
             Global
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="#indonesia" className="hover:underline">
+          <Link to="/indonesia" className="hover:underline">
             Indonesia
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="#provinsi" className="hover:underline">
+          <Link to="/provinsi" className="hover:underline">
             Provinsi
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="#footer" className="hover:underline">
+          <Link to="/about" className="hover:underline">
             Tentang Kami
-          </a>
+          </Link>
         </li>
       </ul>
     </footer>

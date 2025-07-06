@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import Button from "../Button/Button";
-import data from "../../utils/constants/provinces";
+import CovidContext from "../../context/CovidContext";
 
-function CovidForm({ covid, setCovid }) {
+function CovidForm() {
+  const { covid, setCovid } = useContext(CovidContext);
   const [provinsi, setProvinsi] = useState("");
   const [status, setStatus] = useState("");
   const [jumlah, setJumlah] = useState();
@@ -12,7 +13,6 @@ function CovidForm({ covid, setCovid }) {
 
     const updatedProvinces = covid.provinces.map((item) => {
       if (item.provinsi === provinsi) {
-        // Salin data provinsi lama dan update status sesuai input
         return {
           ...item,
           [status]: item[status] + parseInt(jumlah, 10),
@@ -26,7 +26,6 @@ function CovidForm({ covid, setCovid }) {
       provinces: updatedProvinces,
     });
 
-    // Reset form
     setProvinsi("");
     setStatus("");
     setJumlah("");
@@ -40,7 +39,7 @@ function CovidForm({ covid, setCovid }) {
       <div className="flex items-center justify-center md:w-1/2">
         <img
           src="/consultation.png"
-          alt="Form ilustration"
+          alt="Form illustration"
           className="w-[70%] max-w-md h-auto object-contain md:w-[60%]"
         />
       </div>
@@ -64,7 +63,7 @@ function CovidForm({ covid, setCovid }) {
               required
             >
               <option value="">Pilih Provinsi</option>
-              {data.provinces.map((item) => (
+              {covid.provinces.map((item) => (
                 <option key={item.provinsi} value={item.provinsi}>
                   {item.provinsi}
                 </option>
