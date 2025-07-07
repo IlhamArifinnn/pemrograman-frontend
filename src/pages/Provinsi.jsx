@@ -2,7 +2,7 @@ import Hero from "../components/Hero/Hero";
 import CovidForm from "../components/CovidForm/CovidForm";
 import ProvinceStats from "../components/ProvinceStats/ProvinceStats";
 
-function Provinsi() {
+const Provinsi = () => {
   return (
     <>
       <Hero />
@@ -10,6 +10,6 @@ function Provinsi() {
       <CovidForm />
     </>
   );
-}
+};
 
 export default Provinsi;

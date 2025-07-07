@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 
-function Footer() {
+const Footer = () => {
   return (
     <footer
       id="footer"
@@ -44,6 +44,6 @@ function Footer() {
       </ul>
     </footer>
   );
-}
+};
 
 export default Footer;

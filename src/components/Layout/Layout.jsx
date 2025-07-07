@@ -2,7 +2,7 @@ import Container from "../Container/Container";
 import Footer from "../Footer/Footer";
 import Navbar from "../Navbar/Navbar";
 
-function Layout({ children }) {
+const Layout = ({ children }) => {
   return (
     <>
       <Navbar />
@@ -12,6 +12,6 @@ function Layout({ children }) {
       <Footer />
     </>
   );
-}
+};
 
 export default Layout;

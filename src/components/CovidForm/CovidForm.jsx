@@ -2,13 +2,13 @@ import { useState, useContext } from "react";
 import Button from "../Button/Button";
 import CovidContext from "../../context/CovidContext";
 
-function CovidForm() {
+const CovidForm = () => {
   const { covid, setCovid } = useContext(CovidContext);
   const [provinsi, setProvinsi] = useState("");
   const [status, setStatus] = useState("");
   const [jumlah, setJumlah] = useState();
 
-  function handleSubmit(e) {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     const updatedProvinces = covid.provinces.map((item) => {
@@ -29,7 +29,7 @@ function CovidForm() {
     setProvinsi("");
     setStatus("");
     setJumlah("");
-  }
+  };
 
   return (
     <section
@@ -113,6 +113,6 @@ function CovidForm() {
       </div>
     </section>
   );
-}
+};
 
 export default CovidForm;

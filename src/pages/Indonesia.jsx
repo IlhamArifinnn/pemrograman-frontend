@@ -4,11 +4,11 @@ import IndonesiaStats from "../components/IndonesiaStats/IndonesiaStats";
 import ProvinceStats from "../components/ProvinceStats/ProvinceStats";
 import axios from "axios";
 
-function Indonesia() {
+const Indonesia = () => {
   const [covidProvinsi, setCovidProvinsi] = useState([]);
 
   useEffect(() => {
-    async function getIndonesiaSituation() {
+    const getIndonesiaSituation = async () => {
       const URL = "https://covid-fe-2023.vercel.app/api/indonesia.json";
 
       try {
@@ -17,7 +17,7 @@ function Indonesia() {
       } catch (error) {
         console.error("Error fetching data", error);
       }
-    }
+    };
 
     getIndonesiaSituation();
   }, []);
@@ -26,9 +26,12 @@ function Indonesia() {
     <>
       <Hero />
       <IndonesiaStats />
-      <ProvinceStats covidProvinsi={covidProvinsi} title="Situation By Provinces" />
+      <ProvinceStats
+        covidProvinsi={covidProvinsi}
+        title="Situation By Provinces"
+      />
     </>
   );
-}
+};
 
 export default Indonesia;

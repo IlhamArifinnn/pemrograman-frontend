@@ -9,7 +9,7 @@ import CovidContext from "./context/CovidContext";
 import { useState } from "react";
 import data from "./utils/constants/provinces";
 
-function App() {
+const App = () => {
   const [covid, setCovid] = useState(data);
 
   const ContextValue = {
@@ -31,6 +31,6 @@ function App() {
       </CovidContext.Provider>
     </>
   );
-}
+};
 
 export default App;

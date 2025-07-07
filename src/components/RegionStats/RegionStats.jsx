@@ -1,11 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-function SituationByRegion() {
+const SituationByRegion = () => {
   const [covidRegion, setCovidRegion] = useState([]);
 
   useEffect(() => {
-    async function getSituationByRegions() {
+    const getSituationByRegions = async () => {
       const URL = "https://covid-fe-2023.vercel.app/api/global.json";
 
       try {
@@ -14,7 +14,7 @@ function SituationByRegion() {
       } catch (error) {
         console.error("Error fetching data", error);
       }
-    }
+    };
 
     getSituationByRegions();
   }, []);
@@ -70,6 +70,6 @@ function SituationByRegion() {
       </div>
     </section>
   );
-}
+};
 
 export default SituationByRegion;

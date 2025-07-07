@@ -1,4 +1,4 @@
-function Button({ type = "button", children }) {
+const Button = ({ type = "button", children }) => {
   return (
     <button
       type={type}
@@ -7,6 +7,6 @@ function Button({ type = "button", children }) {
       {children}
     </button>
   );
-}
+};
 
 export default Button;

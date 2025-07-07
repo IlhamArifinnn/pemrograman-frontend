@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Link } from "react-router";
 
-function Navbar() {
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toogleMenu = () => {
@@ -15,7 +15,7 @@ function Navbar() {
       aria-label="Main Navigation"
     >
       <div className="flex items-center justify-between w-full sm:w-auto mb-2 sm:mb-0">
-        <a href="#hero" className="flex items-center gap-2">
+        <a href="/" className="flex items-center gap-2">
           <img src="/coronavirus.png" alt="Corona Virus" className="w-10" />
           <h1 className="text-2xl font-bold">Covid ID</h1>
         </a>
@@ -58,6 +58,6 @@ function Navbar() {
       </ul>
     </nav>
   );
-}
+};
 
 export default Navbar;

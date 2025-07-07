@@ -1,4 +1,4 @@
-function About() {
+const About = () => {
   return (
     <section className="min-h-screen flex flex-col justify-center items-center text-justify px-4">
       <h1 className="text-3xl font-bold text-blue-700 mb-6">About Covid ID</h1>
@@ -25,6 +25,6 @@ function About() {
       </p>
     </section>
   );
-}
+};
 
 export default About;

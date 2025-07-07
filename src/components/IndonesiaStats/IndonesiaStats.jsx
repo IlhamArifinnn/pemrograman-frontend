@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-function IndonesiaStats() {
+const IndonesiaStats = () => {
   const [covidIndonesia, setCovidIndonesia] = useState([]);
 
   useEffect(() => {
-    async function getIndonesiaSituation() {
+    const getIndonesiaSituation = async () => {
       const URL = "https://covid-fe-2023.vercel.app/api/indonesia.json";
 
       try {
@@ -14,7 +14,7 @@ function IndonesiaStats() {
       } catch (error) {
         console.error("Error fetching data", error);
       }
-    }
+    };
 
     getIndonesiaSituation();
   }, []);
@@ -53,6 +53,6 @@ function IndonesiaStats() {
       </div>
     </section>
   );
-}
+};
 
 export default IndonesiaStats;

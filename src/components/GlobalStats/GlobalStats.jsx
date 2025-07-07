@@ -1,11 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-function GlobalStats() {
+const GlobalStats = () => {
   const [covidGlobal, setCovidGlobal] = useState([]);
 
   useEffect(() => {
-    async function getGlobalSituation() {
+    const getGlobalSituation = async () => {
       const URL = "https://covid-fe-2023.vercel.app/api/global.json";
 
       try {
@@ -14,7 +14,7 @@ function GlobalStats() {
       } catch (error) {
         console.error("Error fetching data", error);
       }
-    }
+    };
 
     getGlobalSituation();
   }, []);
@@ -53,6 +53,6 @@ function GlobalStats() {
       </div>
     </section>
   );
-}
+};
 
 export default GlobalStats;

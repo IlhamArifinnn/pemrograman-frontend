@@ -1,22 +1,15 @@
 import { useContext } from "react";
 import CovidContext from "../../context/CovidContext";
 
-function ProvinceStats({ covidProvinsi = null, title }) {
+const ProvinceStats = ({ covidProvinsi = null, title }) => {
   const { covid } = useContext(CovidContext);
   const dataToShow = covidProvinsi || covid.provinces;
-
-  const isAPIData = covidProvinsi !== null;
 
   return (
     <section id="provinsi" className="mb-10">
       <h1 className="text-3xl font-bold text-center text-blue-700 mb-2 mt-10">
         {title}
       </h1>
-      <h2 className="mb-8 text-center text-blue-600">
-        {isAPIData
-          ? "Data Covid Berdasarkan Provinsi (API)"
-          : "Data Covid Berdasarkan Provinsi (Local)"}
-      </h2>
 
       <div className="flex items-center justify-center overflow-x-auto">
         <table className="table-auto border border-gray-300 text-sm">
@@ -71,6 +64,6 @@ function ProvinceStats({ covidProvinsi = null, title }) {
       </div>
     </section>
   );
-}
+};
 
 export default ProvinceStats;
