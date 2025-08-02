@@ -103,7 +103,7 @@ function Movie({ movie }) {
         </div>
         <h3>{movie.title}</h3>
       </Link>
-      <p>{formattedDate}</p>
+      <p>Release: {formattedDate}</p>
     </StyledMovie>
   );
 }
