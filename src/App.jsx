@@ -40,7 +40,7 @@ const App = () => {
             <Route path="/movie/now" element={<NowPlaying />}></Route>
             <Route path="/movie/top" element={<TopRated />}></Route>
             <Route path="/movie/:id" element={<Detail />}></Route>
-            <Route path="/button" element={<CounterButton />}></Route>
+            {/* <Route path="/button" element={<CounterButton />}></Route> */}
           </Routes>
         </Layout>
       </MoviesContext.Provider>

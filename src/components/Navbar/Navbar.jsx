@@ -108,9 +108,9 @@ function Navbar() {
             <li className="navbar__item">
               <Link to="/movie/top">Top Rated</Link>
             </li>
-            <li className="navbar__item">
+            {/* <li className="navbar__item">
               <Link to="/button">Button</Link>
-            </li>
+            </li> */}
           </ul>
         </div>
       </nav>
